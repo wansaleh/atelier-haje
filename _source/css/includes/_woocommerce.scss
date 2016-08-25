@@ -1,0 +1,95 @@
+@mixin price-slash {
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 45%;
+    width: 100%;
+    height: 2px;
+    background-color: #222;
+    transform: rotate(-10deg);
+  }
+}
+
+.woocommerce .products .product h3,
+.woocommerce ul.products li.product h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.3em;
+  font-size: 18px;
+  font-weight: 400 !important;
+}
+
+.woocommerce ul.products li.product .price,
+.woocommerce div.product .summary h3.price {
+  font-weight: 400 !important;
+}
+
+// .woocommerce .products .product .price,
+// .woocommerce ul.products li.product .price {
+//   font-weight: 500 !important;
+// }
+
+.woocommerce-Price-currencySymbol {
+  vertical-align: .2em !important;
+  font-size: .8em !important;
+  letter-spacing: -1px;
+  margin-right: .1em;
+}
+
+.woocommerce ul.products li.product .price del,
+.woocommerce .product h3.price del,
+#fullscreen-search .search-result .search-item-content del {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  opacity: .4;
+  margin-right: .3em;
+
+  @include price-slash;
+}
+
+#fullscreen-search .search-result .search-item-content ins {
+  background: transparent !important;
+  font-weight: 500 !important;
+  span {
+    color: #1dc6df !important;
+  }
+}
+
+.product-main .summary {
+  .product_meta {
+    & > span {
+      font-weight: 500;
+
+      & > span {
+        font-weight: 300;
+      }
+
+      &:before {
+        font-family: FontAwesome;
+        content: "\f292";
+        display: inline-block;
+        padding-right: 1.5em;
+        vertical-align: top;
+        font-weight: normal;
+        font-size: .8em;
+        width: 1.2rem;
+      }
+
+      &.posted_in:before {
+        content: "\f07b";
+      }
+
+      &.tagged_as:before {
+        content: "\f02c";
+      }
+    }
+  }
+}
+
+#add_payment_method #payment div.payment_box:before,
+.woocommerce-cart #payment div.payment_box:before,
+.woocommerce-checkout #payment div.payment_box:before {
+  border-bottom-color: #f2f2f2;
+}

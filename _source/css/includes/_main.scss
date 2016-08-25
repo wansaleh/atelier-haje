@@ -1,0 +1,109 @@
+@mixin divider {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 2px;
+    background: $accent;
+  }
+}
+
+html {
+  font-size: 14px;
+}
+
+span.hi {
+  color: $accent;
+}
+
+h3.sup-title {
+  margin-bottom: -1em;
+  padding-bottom: .5em;
+
+  @include divider;
+}
+
+.image-banner-content.content-right,
+.image-banner-content.content-right.sf-animation[data-animation="none"] {
+  right: 0 !important;
+}
+
+.title-wrap .spb-heading > span {
+  border: 0;
+  padding-bottom: .5em;
+
+  @include divider;
+}
+
+[data-row-style="light"] {
+  a {
+    color: #fff;
+  }
+}
+
+[data-slide-title="jubah"] {
+  $color: #795548;
+
+  h3.sup-title:after {
+    background: $color;
+  }
+
+  span.hi {
+    color: $color;
+  }
+
+  a.sf-button {
+    background-color: $color !important;
+
+    &:hover {
+      background-color: shade($color, 20) !important;
+    }
+  }
+}
+
+#home-footer {
+  @extend .text-center;
+
+  // background-color: darken($clr-deep-purple-700, 20) !important;
+  .spb-row-container {
+    background-color: darken($clr-deep-purple-700, 20) !important;
+    background-image: linear-gradient(to bottom left, darken($clr-deep-purple-700, 0), darken($clr-deep-purple-900, 25));
+  }
+
+  .row-overlay {
+    // background-color: darken($clr-deep-purple-700, 20) !important;
+    // background-image: linear-gradient(to bottom, darken($clr-pink-a200, 40), darken($clr-deep-purple-a400, 30));
+    // background-image: linear-gradient(to bottom, darken($clr-amber-a200, 0), darken($clr-amber-a400, 0));
+    // opacity: 1 !important;
+  }
+
+  h2 em {
+    color: #DD36F4;
+    background: linear-gradient(to bottom right, #DD36F4, #1fbdf2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.3em;
+  }
+
+}
+
+// #home-recent-view {
+//   margin-top: 20px;
+//
+//   .spb-row-expand-text {
+//     padding-bottom: 50px;
+//   }
+//
+//   .spb-row-expanding .spb_content_element {
+//     margin-bottom: 20px;
+//   }
+// }
+
+#copyright .text-left,
+#copyright nav .menu li {
+  font-size: 1rem !important;
+}
